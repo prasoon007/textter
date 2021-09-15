@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/textter/static/css/main.73f91557.chunk.css",
+    "main.js": "/textter/static/js/main.9f346994.chunk.js",
+    "main.js.map": "/textter/static/js/main.9f346994.chunk.js.map",
+    "runtime-main.js": "/textter/static/js/runtime-main.aabf8f32.js",
+    "runtime-main.js.map": "/textter/static/js/runtime-main.aabf8f32.js.map",
+    "static/js/2.ad152c72.chunk.js": "/textter/static/js/2.ad152c72.chunk.js",
+    "static/js/2.ad152c72.chunk.js.map": "/textter/static/js/2.ad152c72.chunk.js.map",
+    "static/js/3.bb6b00ee.chunk.js": "/textter/static/js/3.bb6b00ee.chunk.js",
+    "static/js/3.bb6b00ee.chunk.js.map": "/textter/static/js/3.bb6b00ee.chunk.js.map",
+    "index.html": "/textter/index.html",
+    "static/css/main.73f91557.chunk.css.map": "/textter/static/css/main.73f91557.chunk.css.map",
+    "static/js/2.ad152c72.chunk.js.LICENSE.txt": "/textter/static/js/2.ad152c72.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aabf8f32.js",
+    "static/js/2.ad152c72.chunk.js",
+    "static/css/main.73f91557.chunk.css",
+    "static/js/main.9f346994.chunk.js"
+  ]
+}
