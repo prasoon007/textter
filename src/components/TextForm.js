@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 export default function TextForm(props) {
   const [text, setText] = useState("");
@@ -7,7 +7,7 @@ export default function TextForm(props) {
   let onClickUpHandle = () => {
     let newText = text.toUpperCase();
     setText(newText);
-    props.updateAlert('Converted to upper case', 'success');
+    newText && props.updateAlert('Converted to upper case', 'success');
   };
 
   let onCLickLowHandle = () => {
@@ -75,10 +75,10 @@ export default function TextForm(props) {
             camelCase
           </button>
         </div>
-        <div className="container">
+        <div className="container my-3" >
           <h3>Text Analysis</h3>
-          <p>{text.split(" ").length * 0.008} Minutes Read</p>
-          <p>Above text contain {text.split(" ").length} Words</p>
+        <p>{text === "" ? 0:text.split(" ").length * 0.008} Minutes Read</p>
+          <p>Above text contain {text.indexOf(' ') === text.length-1 || text === "" ? (text.split(" ").length-1):text.split(" ").length} Words</p>
           <p>Above text contain {text.length} letters</p>
           <h3>Text Preview</h3>
           <p>{text.length>0?text:'Enter Something to preview'}</p>
@@ -88,6 +88,3 @@ export default function TextForm(props) {
   );
 }
 
-TextForm.propTypes = {
-  heading: PropTypes.string.isRequired,
-};

@@ -1,5 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+// import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -7,7 +8,7 @@ export default function Navbar(props) {
       className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="#">
           {props.title}
         </a>
         <button
@@ -24,15 +25,15 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
-                {props.about}
+              <a className="nav-link active" aria-current="page" href="#">
+                Home
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link active" href="/">
+            {/* <li className="nav-item">
+              <a className="nav-link active" href="/about">
                 About
               </a>
-            </li>
+            </li> */}
           </ul>
           <div className={`custom-control custom-switch text-${props.mode==='light'?'dark':'light'}`}>
             <input type="checkbox" className="custom-control-input" id="customSwitch1" onClick={props.toggleMode}/>
@@ -43,13 +44,3 @@ export default function Navbar(props) {
     </nav>
   );
 }
-
-Navbar.propTypes = {
-  title: PropTypes.string.isRequired,
-  about: PropTypes.string.isRequired,
-};
-
-Navbar.defaultProp = {
-  title: "textter",
-  about: "about",
-};
