@@ -7,14 +7,13 @@ export default function TextForm(props) {
   let onClickUpHandle = () => {
     let newText = text.toUpperCase();
     setText(newText);
-    newText && props.updateAlert('Converted to upper case', 'success');
+    newText && props.updateAlert("Converted to upper case", "success");
   };
 
   let onCLickLowHandle = () => {
     let newText = text.toLowerCase();
     setText(newText);
-    newText && props.updateAlert('Converted to lower case', 'success');
-
+    newText && props.updateAlert("Converted to lower case", "success");
   };
 
   let onChangeHandle = (event) => {
@@ -23,13 +22,13 @@ export default function TextForm(props) {
 
   let onClickClear = () => {
     setText("");
-    props.updateAlert('Text cleared', 'success');
+    props.updateAlert("Text cleared", "success");
   };
 
   let onClickReverse = () => {
     let revStr = text.split(" ").reverse().join(" ");
     setText(revStr);
-    revStr && props.updateAlert('Text reversed', 'success');
+    revStr && props.updateAlert("Text reversed", "success");
   };
 
   let onClickCamel = () => {
@@ -39,12 +38,12 @@ export default function TextForm(props) {
       })
       .replace(/\s+/g, "");
     setText(camelCase);
-    camelCase && props.updateAlert('Converted to camel case', 'success');
+    camelCase && props.updateAlert("Converted to camel case", "success");
   };
 
   return (
     <>
-      <div style={{color: props.mode === 'dark'?'white':'black'}}>
+      <div style={{ color: props.mode === "dark" ? "white" : "black" }}>
         <div>
           <h2>{props.heading}</h2>
           <div className="mb-3">
@@ -53,38 +52,66 @@ export default function TextForm(props) {
               placeholder="Enter Your text here"
               className="form-control"
               onChange={onChangeHandle}
-              style={{ background: props.mode === "dark" ? "grey" : "white",
-                       color: props.mode === "dark" ? "white" : "black"}}
+              style={{
+                background: props.mode === "dark" ? "grey" : "white",
+                color: props.mode === "dark" ? "white" : "black",
+              }}
               id="myBox"
               rows="8"
             ></textarea>
           </div>
-          <button onClick={onClickUpHandle} className="btn btn-primary mx-1">
+          <button
+            onClick={onClickUpHandle}
+            className="btn btn-primary mx-1 my-1"
+          >
             Convert to upper case
           </button>
-          <button onClick={onCLickLowHandle} className="btn-primary btn mx-1">
+          <button
+            onClick={onCLickLowHandle}
+            className="btn-primary btn mx-1 my-1"
+          >
             Convert to lower case
           </button>
-          <button onClick={onClickClear} className="btn-primary btn mx-1">
+          <button onClick={onClickClear} className="btn-primary btn mx-1 my-1">
             Clear
           </button>
-          <button onClick={onClickReverse} className="btn btn-primary btn mx-1">
+          <button
+            onClick={onClickReverse}
+            className="btn btn-primary btn mx-1 my-1"
+          >
             Reverse
           </button>
-          <button onClick={onClickCamel} className="btn btn-primary btn mx-1">
+          <button
+            onClick={onClickCamel}
+            className="btn btn-primary btn mx-1 my-1"
+          >
             camelCase
           </button>
         </div>
-        <div className="container my-3" >
+        <div className="container my-3">
           <h3>Text Analysis</h3>
-        <p>{text === "" ? 0:text.split(" ").length * 0.008} Minutes Read</p>
-          <p>Above text contain {text.indexOf(' ') === text.length-1 || text === "" ? (text.split(" ").length-1):text.split(" ").length} Words</p>
+          <p>
+            {text === ""
+              ? 0
+              : text.split(/\s+/).filter((element) => {
+                  return element.length !== 0;
+                }).length * 0.008}{" "}
+            Minutes Read
+          </p>
+          <p>
+            Above text contain{" "}
+            {
+              text.split(/\s+/).filter((element) => {
+                return element.length !== 0;
+              }).length
+            }{" "}
+            Words
+          </p>
           <p>Above text contain {text.length} letters</p>
           <h3>Text Preview</h3>
-          <p>{text.length>0?text:'Enter Something to preview'}</p>
+          <p>{text.length > 0 ? text : "Enter Something to preview"}</p>
         </div>
       </div>
     </>
   );
 }
-
